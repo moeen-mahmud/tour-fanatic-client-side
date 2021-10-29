@@ -9,11 +9,10 @@ const PackageContainer = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5000/packages").then((res) => {
-      console.log(res.data); //TODO: have to remove console.log
       setPackages(res.data);
     });
   }, []);
-
+  //TODO: will add a loading spinner
   const handleBooking = (id) => {
     axios.get(`http://localhost:5000/packages/${id}`).then((res) => {
       console.log(res.data);
