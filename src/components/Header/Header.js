@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../../src/App.css";
 import useAuth from "../../hooks/useAuth";
+import { FaUser } from "react-icons/fa";
 const Header = () => {
   const { user, logOut } = useAuth();
 
@@ -18,29 +19,32 @@ const Header = () => {
         <div className="flex gap-10 items-center">
           <NavLink
             activeClassName="text-indigo-600"
-            className="text-xl text-gray-800 font-semibold"
+            className="text-lg text-gray-800 font-semibold"
             to="/home"
           >
             Home
           </NavLink>
           {user.email ? (
             <div className="flex items-center gap-10">
-              <span className="text-xl text-gray-800 font-semibold">
-                {user.displayName}
-              </span>
               <NavLink
                 activeClassName="text-indigo-600"
-                className="text-xl text-gray-800 font-semibold"
+                className="  text-gray-800 font-semibold"
                 to="/my-packages"
               >
                 My Packages
               </NavLink>
-              <button
-                onClick={logOut}
-                className="py-3 px-6 rounded bg-indigo-600 text-white font-semibold"
-              >
-                Logout
-              </button>
+              <div className="flex items-center gap-3 ">
+                <span className="cursor-pointer flex items-center gap-3  py-3 px-6 rounded bg-indigo-600 text-white font-semibold">
+                  {/* TODO:Will try to add a user dashboard */}
+                  <FaUser /> {user.displayName}
+                </span>
+                <button
+                  onClick={logOut}
+                  className="py-3 px-6 rounded bg-indigo-600 text-white font-semibold"
+                >
+                  Logout
+                </button>
+              </div>
             </div>
           ) : (
             <NavLink

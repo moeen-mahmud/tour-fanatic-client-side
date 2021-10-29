@@ -36,7 +36,7 @@ const UserPackages = () => {
       <p className="mb-4 text-lg font-medium">
         Total Package{filterPacks.length > 1 ? "s" : ""} {filterPacks.length}
       </p>
-      <div className="flex flex-col lg:flex-row">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
         {filterPacks.map((pack) => (
           <SinglePackage
             pack={pack}

@@ -1,15 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
 
 const PlaceOrder = () => {
   const { user } = useAuth();
   const { id } = useParams();
   const [pack, setPack] = useState({});
+  const history = useHistory();
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   useEffect(() => {
     axios.get(`http://localhost:5000/packages/${id}`).then((res) => {
@@ -27,7 +28,11 @@ const PlaceOrder = () => {
         packageImage: pack.packageImage,
       })
       .then((res) => {
-        console.log(res.data);
+        if (res.data.insertedId) {
+          window.alert("Package has been placed for review!");
+          reset();
+          history.push("/my-packages");
+        }
       });
   };
 
@@ -49,7 +54,7 @@ const PlaceOrder = () => {
             <input
               className="p-3 border-b-2"
               {...register("name")}
-              value={user.displayName}
+              value={user.displayName || ""}
               required
             />
           </div>
@@ -63,7 +68,7 @@ const PlaceOrder = () => {
             <input
               className="p-3 border-b-2"
               {...register("email")}
-              value={user.email}
+              value={user.email || ""}
               required
             />
           </div>
