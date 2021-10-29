@@ -18,7 +18,17 @@ const PlaceOrder = () => {
     });
   }, [id]);
   const onSubmit = (data) => {
-    // axios.
+    axios
+      .post("http://localhost:5000/users", {
+        name: data.name,
+        email: data.email,
+        address: data.address,
+        packageName: pack.packageName,
+        packageImage: pack.packageImage,
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
   };
 
   return (

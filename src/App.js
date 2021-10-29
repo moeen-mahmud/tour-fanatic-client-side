@@ -7,6 +7,7 @@ import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
 import NotFound from "./Pages/NotFound/NotFound";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AuthProvider from "./context/AuthProvider";
+import UserPackages from "./Pages/UserPackages/UserPackages";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <PrivateRoute path="/place-order/:id">
             <PlaceOrder></PlaceOrder>
+          </PrivateRoute>
+          <PrivateRoute path="/my-packages">
+            <UserPackages></UserPackages>
           </PrivateRoute>
           <Route path="*">
             <NotFound></NotFound>
