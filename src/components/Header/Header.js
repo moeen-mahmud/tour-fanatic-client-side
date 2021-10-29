@@ -28,6 +28,13 @@ const Header = () => {
               <span className="text-xl text-gray-800 font-semibold">
                 {user.displayName}
               </span>
+              <NavLink
+                activeClassName="text-indigo-600"
+                className="text-xl text-gray-800 font-semibold"
+                to="/my-packages"
+              >
+                My Packages
+              </NavLink>
               <button
                 onClick={logOut}
                 className="py-3 px-6 rounded bg-indigo-600 text-white font-semibold"
