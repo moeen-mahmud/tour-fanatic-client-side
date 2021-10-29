@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import Package from "../Package/Package";
 
 const PackageContainer = () => {
   const [packages, setPackages] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     axios.get("http://localhost:5000/packages").then((res) => {
@@ -16,6 +18,7 @@ const PackageContainer = () => {
     axios.get(`http://localhost:5000/packages/${id}`).then((res) => {
       console.log(res.data);
     });
+    history.push(`/place-order/${id}`);
   };
 
   return (

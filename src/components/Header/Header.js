@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../../../src/App.css";
 import useAuth from "../../hooks/useAuth";
 const Header = () => {
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
 
   return (
     <div className="px-10 py-5">
@@ -15,7 +15,7 @@ const Header = () => {
             </h1>
           </NavLink>
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-10 items-center">
           <NavLink
             activeClassName="text-indigo-600"
             className="text-xl text-gray-800 font-semibold"
@@ -23,13 +23,24 @@ const Header = () => {
           >
             Home
           </NavLink>
-          <NavLink
-            activeClassName="text-indigo-600"
-            className="text-xl text-gray-800 font-semibold"
-            to="/login"
-          >
-            Login
-          </NavLink>
+          {user.email ? (
+            <div className="flex items-center gap-10">
+              <span className="text-xl text-gray-800 font-semibold">
+                {user.displayName}
+              </span>
+              <button className="py-3 px-6 rounded bg-indigo-600 text-white font-semibold">
+                Logout
+              </button>
+            </div>
+          ) : (
+            <NavLink
+              activeClassName="text-indigo-600"
+              className="text-xl text-gray-800 font-semibold"
+              to="/login"
+            >
+              Login
+            </NavLink>
+          )}
         </div>
       </nav>
     </div>
