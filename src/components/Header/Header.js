@@ -33,6 +33,20 @@ const Header = () => {
               >
                 My Packages
               </NavLink>
+              <NavLink
+                activeClassName="text-indigo-600"
+                className="  text-gray-800 font-semibold"
+                to="/manage-packages"
+              >
+                Manage Packages
+              </NavLink>
+              <NavLink
+                activeClassName="text-indigo-600"
+                className="  text-gray-800 font-semibold"
+                to="/add-package"
+              >
+                Add Package
+              </NavLink>
               <div className="flex items-center gap-3 ">
                 <span className="cursor-pointer flex items-center gap-3  py-3 px-6 rounded bg-indigo-600 text-white font-semibold">
                   {/* TODO:Will try to add a user dashboard */}

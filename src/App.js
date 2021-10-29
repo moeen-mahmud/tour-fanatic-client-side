@@ -8,6 +8,8 @@ import NotFound from "./Pages/NotFound/NotFound";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AuthProvider from "./context/AuthProvider";
 import UserPackages from "./Pages/UserPackages/UserPackages";
+import ManagePackage from "./Pages/ManagePackage/ManagePackage";
+import AddPackage from "./Pages/AddPackage/AddPackage";
 
 function App() {
   return (
@@ -29,6 +31,12 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/my-packages">
             <UserPackages></UserPackages>
+          </PrivateRoute>
+          <PrivateRoute path="/manage-packages">
+            <ManagePackage></ManagePackage>
+          </PrivateRoute>
+          <PrivateRoute path="/add-package">
+            <AddPackage></AddPackage>
           </PrivateRoute>
           <Route path="*">
             <NotFound></NotFound>

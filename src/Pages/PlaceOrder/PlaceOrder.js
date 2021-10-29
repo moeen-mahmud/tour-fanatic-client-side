@@ -26,6 +26,7 @@ const PlaceOrder = () => {
         address: data.address,
         packageName: pack.packageName,
         packageImage: pack.packageImage,
+        packageStatus: "Pending",
       })
       .then((res) => {
         if (res.data.insertedId) {
@@ -77,7 +78,7 @@ const PlaceOrder = () => {
               className="pl-3 text-xl text-indigo-600 font-semibold"
               htmlFor="address"
             >
-              Adress
+              Address
             </label>
             <input
               className="p-3 border-b-2"
