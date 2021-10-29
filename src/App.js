@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
@@ -34,7 +34,7 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
-        {/* <Footer></Footer> */}
+        <Footer></Footer>
       </Router>
     </AuthProvider>
   );
