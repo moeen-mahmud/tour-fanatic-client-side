@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Package from "../Package/Package";
+import Spinner from "../Spinner/Spinner";
 
 const PackageContainer = () => {
   const [packages, setPackages] = useState([]);
@@ -28,15 +29,19 @@ const PackageContainer = () => {
       <p className="text-lg text-indigo-600 font-medium text-center my-6">
         Discover Now
       </p>
-      <div className="grid grid-cols-1 gap-10  lg:grid-cols-3 ">
-        {packages.map((pack) => (
-          <Package
-            pack={pack}
-            key={pack._id}
-            handleBooking={handleBooking}
-          ></Package>
-        ))}
-      </div>
+      {packages.length === 0 ? (
+        <Spinner></Spinner>
+      ) : (
+        <div className="grid grid-cols-1 gap-10  lg:grid-cols-3 ">
+          {packages.map((pack) => (
+            <Package
+              pack={pack}
+              key={pack._id}
+              handleBooking={handleBooking}
+            ></Package>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
