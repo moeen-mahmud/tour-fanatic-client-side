@@ -1,6 +1,6 @@
 import React from "react";
 
-const Package = ({ pack }) => {
+const Package = ({ pack, handleBooking }) => {
   return (
     <div className="text-justify space-y-4 shadow-xl py-4 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
       <div className="overflow-hidden">
@@ -15,7 +15,10 @@ const Package = ({ pack }) => {
           {pack.packageName}
         </h1>
         <p className="h-52 font-medium leading-relaxed">{pack.packageDesc}</p>
-        <button className="py-3 px-6 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 transition-all">
+        <button
+          onClick={() => handleBooking(pack._id)}
+          className="py-3 px-6 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 transition-all"
+        >
           Book Now
         </button>
       </div>
