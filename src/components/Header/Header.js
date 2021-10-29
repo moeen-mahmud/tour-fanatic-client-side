@@ -28,7 +28,10 @@ const Header = () => {
               <span className="text-xl text-gray-800 font-semibold">
                 {user.displayName}
               </span>
-              <button className="py-3 px-6 rounded bg-indigo-600 text-white font-semibold">
+              <button
+                onClick={logOut}
+                className="py-3 px-6 rounded bg-indigo-600 text-white font-semibold"
+              >
                 Logout
               </button>
             </div>
