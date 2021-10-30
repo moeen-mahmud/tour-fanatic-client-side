@@ -1,9 +1,17 @@
-import axios from "axios";
+// Importing React
 import React from "react";
+
+// Importing axios
+import axios from "axios";
+
+// Importing react hook form
 import { useForm } from "react-hook-form";
+
+// Main Add Package component
 const AddPackage = () => {
   const { register, handleSubmit, reset } = useForm();
 
+  // Funtionality for adding the package
   const onSubmit = (data) => {
     axios
       .post("https://young-wildwood-02340.herokuapp.com/packages", data)
@@ -18,6 +26,7 @@ const AddPackage = () => {
   return (
     <div className="p-10 flex justify-center">
       <div className="p-10 shadow-xl rounded lg:w-1/3">
+        {/* Form title */}
         <h1 className="text-2xl text-center lg:text-left lg:text-3xl font-bold text-gray-800 mb-4">
           Add A Package
         </h1>
