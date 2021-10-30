@@ -41,10 +41,10 @@ const UserPackages = () => {
       </p>
       {filterPacks.length === 0 ? (
         <div className="text-center my-20 space-y-4">
-          <h1 className="text-gray-500 text-5xl font-bold">
+          <h1 className="text-gray-500 text-2xl lg:text-5xl font-bold">
             You Have No Selected Package
           </h1>
-          <p className="text-gray-500 text-2xl font-medium">
+          <p className="text-gray-500 text-xl lg:text-2xl font-medium">
             <Link className="text-indigo-600" to="/">
               Click Here{" "}
             </Link>
