@@ -17,7 +17,7 @@ const AddPackage = () => {
 
   return (
     <div className="p-10 flex justify-center">
-      <div className="p-10 shadow-xl rounded w-1/3">
+      <div className="p-10 shadow-xl rounded lg:w-1/3">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">Add A Package</h1>
         <form
           className="flex flex-col space-y-4"
