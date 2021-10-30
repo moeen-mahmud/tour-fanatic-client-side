@@ -4,6 +4,7 @@ import React from "react";
 // Importing hero image
 import HeroImage from "../../assets/hero-bg.png";
 
+// Main Hero component
 const Hero = () => {
   return (
     <div
