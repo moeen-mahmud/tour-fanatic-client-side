@@ -1,5 +1,7 @@
+// Importing React
 import React from "react";
 
+// Main Not Found Component
 const NotFound = () => {
   return (
     <div className="p-10 flex justify-center">
