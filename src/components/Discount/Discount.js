@@ -13,13 +13,13 @@ const Discount = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
-      className="p-10 flex flex-col lg:flex-row justify-center"
+      className="my-32 lg:m-0 p-10 flex flex-col lg:flex-row justify-center lg:gap-0 gap-10"
     >
-      <div className="w-1/3">
-        <h1 className="text-3xl font-bold text-gray-800 mb-12">
+      <div className="lg:w-1/3">
+        <h1 className="lg:text-left text-center text-3xl font-bold text-gray-800 mb-12">
           Discount on Quantity
         </h1>
-        <p className="text-gray-800 font-medium text-lg">
+        <p className="text-gray-800 font-medium text-lg mb-4 lg:m-0">
           Book a tour today and enjoy exclusive savings on any future trip you
           book! There’s no time limit or expiry date on these savings
         </p>
@@ -29,7 +29,7 @@ const Discount = () => {
           alt="Offers"
         />
       </div>
-      <div className="w-1/2">
+      <div className="lg:w-1/2">
         <img
           className="block mx-auto w-1/2"
           src={DiscountImage}
