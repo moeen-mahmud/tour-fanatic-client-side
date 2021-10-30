@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <div className="px-10 py-5">
-      <nav className="flex justify-between items-center">
+      <nav className="flex flex-col lg:flex-row justify-center lg:justify-between items-center">
         <div>
           <NavLink to="/">
             <h1 className="brand-title font-bold text-indigo-600 text-5xl">
@@ -16,38 +16,40 @@ const Header = () => {
             </h1>
           </NavLink>
         </div>
-        <div className="flex gap-10 items-center">
+        <div className="my-4 lg:m-0 flex flex-col lg:flex-row gap-2 lg:gap-10 items-center">
           <NavLink
             activeClassName="text-indigo-600"
-            className="text-lg text-gray-800 font-semibold"
+            className="text-gray-800 font-semibold text-center text-xl lg:text-left"
             to="/home"
           >
             Home
           </NavLink>
           {user.email ? (
-            <div className="flex items-center gap-10">
-              <NavLink
-                activeClassName="text-indigo-600"
-                className="  text-gray-800 font-semibold"
-                to="/my-packages"
-              >
-                My Packages
-              </NavLink>
-              <NavLink
-                activeClassName="text-indigo-600"
-                className="  text-gray-800 font-semibold"
-                to="/manage-packages"
-              >
-                Manage Packages
-              </NavLink>
-              <NavLink
-                activeClassName="text-indigo-600"
-                className="  text-gray-800 font-semibold"
-                to="/add-package"
-              >
-                Add Package
-              </NavLink>
-              <div className="flex items-center gap-3 ">
+            <div className="flex flex-col lg:flex-row items-center gap-10">
+              <div className="flex flex-col lg:flex-row text-center gap-4 lg:gap-10 lg:text-lg">
+                <NavLink
+                  activeClassName="text-indigo-600"
+                  className="  text-gray-800 font-semibold"
+                  to="/my-packages"
+                >
+                  My Packages
+                </NavLink>
+                <NavLink
+                  activeClassName="text-indigo-600"
+                  className="  text-gray-800 font-semibold"
+                  to="/manage-packages"
+                >
+                  Manage Packages
+                </NavLink>
+                <NavLink
+                  activeClassName="text-indigo-600"
+                  className="  text-gray-800 font-semibold"
+                  to="/add-package"
+                >
+                  Add Package
+                </NavLink>
+              </div>
+              <div className="flex items-center gap-3 flex-col lg:flex-row">
                 <span className="cursor-pointer flex items-center gap-3  py-3 px-6 rounded bg-indigo-600 text-white font-semibold">
                   {/* TODO:Will try to add a user dashboard */}
                   <FaUser /> {user.displayName}
