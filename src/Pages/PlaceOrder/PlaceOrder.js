@@ -10,7 +10,12 @@ const PlaceOrder = () => {
   const [pack, setPack] = useState({});
   const history = useHistory();
 
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   useEffect(() => {
     axios.get(`http://localhost:5000/packages/${id}`).then((res) => {
@@ -24,6 +29,7 @@ const PlaceOrder = () => {
         name: data.name,
         email: data.email,
         address: data.address,
+        date: data.date,
         packageName: pack.packageName,
         packageImage: pack.packageImage,
         packageStatus: "Pending",
@@ -86,6 +92,42 @@ const PlaceOrder = () => {
               placeholder="Address Details"
               required
             />
+          </div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-col gap-3 relative">
+              <label
+                className="pl-3 text-xl text-indigo-600 font-semibold"
+                htmlFor="number"
+              >
+                Phone Number
+              </label>
+              <input
+                className="p-3 border-b-2"
+                {...register("number", { pattern: /^\d+$/ })}
+                placeholder="01XXXXXXXXX"
+                minLength="11"
+                required
+              />
+              {errors.number && (
+                <span className="text-sm text-red-500 absolute -bottom-6">
+                  Only Numbers are allowed
+                </span>
+              )}
+            </div>
+            <div className="flex flex-col gap-3">
+              <label
+                className="pl-3 text-xl text-indigo-600 font-semibold"
+                htmlFor="date"
+              >
+                Start Date
+              </label>
+              <input
+                className="p-3 border-b-2"
+                type="date"
+                {...register("date")}
+                required
+              />
+            </div>
           </div>
           <button
             className="py-3 px-6 rounded bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-all"
