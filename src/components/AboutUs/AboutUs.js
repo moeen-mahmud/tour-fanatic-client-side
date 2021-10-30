@@ -1,14 +1,23 @@
+// Importing necessary modules
 import React from "react";
+
+// Importing Image
 import AboutImage from "../../assets/about-us.jpg";
+
+// Importing icons
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { GiSofa } from "react-icons/gi";
 import { GiPoliceBadge } from "react-icons/gi";
+
+// Main AboutUs Component
 const AboutUs = () => {
   return (
     <div className="p-10 flex flex-col lg:flex-row justify-between">
+      {/* Show image */}
       <div className="lg:w-1/2">
         <img src={AboutImage} alt="About Us" />
       </div>
+      {/* About Content */}
       <div className="lg:w-1/2">
         <h1 className="text-3xl font-bold text-gray-800">Why Choose Us</h1>
         <div className="mt-10 space-y-8">
