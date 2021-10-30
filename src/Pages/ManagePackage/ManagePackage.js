@@ -18,7 +18,6 @@ const ManagePackage = () => {
     axios
       .get("https://young-wildwood-02340.herokuapp.com/users")
       .then((res) => {
-        console.log(res.data);
         setUserPacks(res.data);
       });
   }, []);

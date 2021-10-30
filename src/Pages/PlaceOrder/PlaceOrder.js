@@ -40,7 +40,6 @@ const PlaceOrder = () => {
     axios
       .get(`https://young-wildwood-02340.herokuapp.com/packages/${id}`)
       .then((res) => {
-        console.log(res.data);
         setPack(res.data);
       });
   }, [id]);
