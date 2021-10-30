@@ -6,10 +6,12 @@ const ManagePackage = () => {
   const [userPacks, setUserPacks] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/users").then((res) => {
-      console.log(res.data);
-      setUserPacks(res.data);
-    });
+    axios
+      .get("https://young-wildwood-02340.herokuapp.com/users")
+      .then((res) => {
+        console.log(res.data);
+        setUserPacks(res.data);
+      });
   }, []);
 
   const handleStatusChange = (id) => {
@@ -18,7 +20,7 @@ const ManagePackage = () => {
     );
     if (confirmation) {
       axios
-        .put(`http://localhost:5000/users/${id}`, {
+        .put(`https://young-wildwood-02340.herokuapp.com/users/${id}`, {
           packageStatus: "Approved",
         })
         .then((res) => {
@@ -35,15 +37,17 @@ const ManagePackage = () => {
       "Are you sure you want to delete this package?"
     );
     if (confirmation) {
-      axios.delete(`http://localhost:5000/users/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          const newPackages = userPacks.filter(
-            (userPack) => userPack._id !== id
-          );
-          setUserPacks(newPackages);
-          window.alert("Package has been deleted!");
-        }
-      });
+      axios
+        .delete(`https://young-wildwood-02340.herokuapp.com/users/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            const newPackages = userPacks.filter(
+              (userPack) => userPack._id !== id
+            );
+            setUserPacks(newPackages);
+            window.alert("Package has been deleted!");
+          }
+        });
     }
   };
 

@@ -9,15 +9,19 @@ const PackageContainer = () => {
   const history = useHistory();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/packages").then((res) => {
-      setPackages(res.data);
-    });
+    axios
+      .get("https://young-wildwood-02340.herokuapp.com/packages")
+      .then((res) => {
+        setPackages(res.data);
+      });
   }, []);
   //TODO: will add a loading spinner
   const handleBooking = (id) => {
-    axios.get(`http://localhost:5000/packages/${id}`).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .get(`https://young-wildwood-02340.herokuapp.com/packages/${id}`)
+      .then((res) => {
+        console.log(res.data);
+      });
     history.push(`/place-order/${id}`);
   };
 

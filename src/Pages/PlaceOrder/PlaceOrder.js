@@ -18,14 +18,16 @@ const PlaceOrder = () => {
   } = useForm();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/packages/${id}`).then((res) => {
-      console.log(res.data);
-      setPack(res.data);
-    });
+    axios
+      .get(`https://young-wildwood-02340.herokuapp.com/packages/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setPack(res.data);
+      });
   }, [id]);
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:5000/users", {
+      .post("https://young-wildwood-02340.herokuapp.com/users", {
         name: data.name,
         email: data.email,
         address: data.address,

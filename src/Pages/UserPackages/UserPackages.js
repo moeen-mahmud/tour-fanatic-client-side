@@ -8,22 +8,26 @@ const UserPackages = () => {
   const [userPacks, setUserPacks] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/users").then((res) => {
-      console.log(res.data);
-      setUserPacks(res.data);
-    });
+    axios
+      .get("https://young-wildwood-02340.herokuapp.com/users")
+      .then((res) => {
+        console.log(res.data);
+        setUserPacks(res.data);
+      });
   }, []);
   const filterPacks = userPacks.filter((packs) => packs.email === user.email);
 
   const handleDelete = (id) => {
     const confirmation = window.confirm("Do you want to cancel the package?");
     if (confirmation) {
-      axios.delete(`http://localhost:5000/users/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          const newUserPacks = userPacks.filter((upack) => upack._id !== id);
-          setUserPacks(newUserPacks);
-        }
-      });
+      axios
+        .delete(`https://young-wildwood-02340.herokuapp.com/users/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            const newUserPacks = userPacks.filter((upack) => upack._id !== id);
+            setUserPacks(newUserPacks);
+          }
+        });
     }
   };
 
