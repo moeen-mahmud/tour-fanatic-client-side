@@ -80,15 +80,15 @@ const ManagePackage = () => {
             <div className="flex gap-4">
               <button
                 onClick={() => handleStatusChange(userPack._id)}
-                className="text-2xl text-green-500 hover:text-green-700 transition-all"
+                className="py-2 px-4 rounded-full border-2 flex items-center gap-3 text-2xl text-green-500 hover:text-green-700 transition-all"
               >
-                <IoIosCheckbox />
+                <span className="text-lg">Update</span> <IoIosCheckbox />
               </button>
               <button
                 onClick={() => handleDelete(userPack._id)}
-                className="text-2xl text-red-500 hover:text-red-700 transition-all"
+                className="py-2 px-4 rounded-full border-2 flex items-center gap-3 text-2xl text-red-500 hover:text-red-700 transition-all"
               >
-                <IoMdTrash />
+                <span className="text-lg">Delete</span> <IoMdTrash />
               </button>
             </div>
           </div>
