@@ -5,8 +5,11 @@ const Footer = () => {
     <div className="relative bottom-0 bg-indigo-700 text-white flex justify-center items-center">
       <div className="m-10">
         <section className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-32 mt-4">
-          <div>
+          <div className="text-center">
             <h1 className="font-semibold text-3xl mb-4">Tour Fanatic</h1>
+            <p className="font-semibold text-xl mb-4 text-gray-400">
+              Travel Solo Not Alone
+            </p>
             <div className="flex items-center gap-8 justify-center">
               <p className="text-2xl cursor-pointer hover:text-indigo-400 transition-all">
                 <FaFacebook />
