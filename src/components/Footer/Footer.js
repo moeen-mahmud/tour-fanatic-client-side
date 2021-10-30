@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="relative bottom-0 bg-indigo-700 text-white flex justify-center items-center">
       <div className="m-10">
-        <section className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-32 mt-4">
+        <section className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-32 mt-4 text-center lg:text-left">
           <div className="text-center">
             <h1 className="font-semibold text-3xl mb-4">Tour Fanatic</h1>
             <p className="font-semibold text-xl mb-4 text-gray-400">
@@ -23,7 +23,7 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h1 className="font-semibold text-3xl mb-4">Tours</h1>
+            <h1 className="font-semibold text-2xl lg:text-3xl mb-4">Tours</h1>
             <div className="space-y-4">
               <p className="text-xl text-gray-300 cursor-pointer hover:text-white transition">
                 Cox's Bazar
@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h1 className="font-semibold text-3xl mb-4">Support</h1>
+            <h1 className="font-semibold text-2xl lg:text-3xl mb-4">Support</h1>
             <div className="space-y-4">
               <p className="text-xl text-gray-300 cursor-pointer hover:text-white transition">
                 Account
@@ -63,7 +63,9 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h1 className="font-semibold text-3xl mb-4">Useful Pages</h1>
+            <h1 className="font-semibold text-2xl lg:text-3xl mb-4">
+              Useful Pages
+            </h1>
             <div className="space-y-4">
               <p className="text-xl text-gray-300 cursor-pointer hover:text-white transition">
                 Deals

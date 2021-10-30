@@ -24,7 +24,7 @@ const Discount = () => {
           book! There’s no time limit or expiry date on these savings
         </p>
         <img
-          className="shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+          className="shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 mx-auto lg:m-0"
           src={OfferImage}
           alt="Offers"
         />
