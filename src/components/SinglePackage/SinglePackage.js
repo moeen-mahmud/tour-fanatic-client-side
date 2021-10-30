@@ -1,9 +1,14 @@
+// Importing React
 import React from "react";
+
+// Importing icon
 import { FaTrash } from "react-icons/fa";
 
+// Main Single Package component
 const SinglePackage = ({ pack, handleDelete }) => {
   return (
     <div className="flex flex-col lg:flex-row gap-3">
+      {/* Package Information */}
       <img
         className="lg:w-1/4 rounded"
         src={pack.packageImage}
