@@ -3,9 +3,9 @@ import { FaTrash } from "react-icons/fa";
 
 const SinglePackage = ({ pack, handleDelete }) => {
   return (
-    <div className="flex gap-3">
+    <div className="flex flex-col lg:flex-row gap-3">
       <img
-        className="w-1/4 rounded"
+        className="lg:w-1/4 rounded"
         src={pack.packageImage}
         alt={pack.packageName}
       />
