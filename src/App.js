@@ -1,4 +1,7 @@
+// Importing modules from react router dom
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// Importing route components
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./Pages/Home/Home";
@@ -11,8 +14,10 @@ import UserPackages from "./Pages/UserPackages/UserPackages";
 import ManagePackage from "./Pages/ManagePackage/ManagePackage";
 import AddPackage from "./Pages/AddPackage/AddPackage";
 
+// Main App Component
 function App() {
   return (
+    // Authentication provider context
     <AuthProvider>
       <Router>
         <Header></Header>
