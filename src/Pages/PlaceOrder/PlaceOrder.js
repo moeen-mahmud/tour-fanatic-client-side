@@ -46,11 +46,11 @@ const PlaceOrder = () => {
   };
 
   return (
-    <div className="p-10 flex justify-around gap-10">
-      <div className="w-1/2">
+    <div className="p-10 flex flex-col-reverse lg:flex-row justify-around gap-10">
+      <div className="lg:w-1/2">
         <h1 className="text-3xl text-gray-800 font-semibold">Review Package</h1>
         <form
-          className="mt-8 flex flex-col gap-5 w-2/3"
+          className="mt-8 flex flex-col gap-5 lg:w-2/3"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="flex flex-col gap-3">
@@ -95,7 +95,7 @@ const PlaceOrder = () => {
               required
             />
           </div>
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-3 mb-4">
             <div className="flex flex-col gap-3 relative">
               <label
                 className="pl-3 text-xl text-indigo-600 font-semibold"
@@ -139,14 +139,14 @@ const PlaceOrder = () => {
           </button>
         </form>
       </div>
-      <div className="w-1/2">
+      <div className="lg:w-1/2">
         <h1 className="text-3xl text-gray-800 font-semibold">
           Package Details
         </h1>
         <div className="mt-8 p-4 rounded shadow-xl">
-          <div className="flex gap-3">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-3">
             <img
-              className="w-1/4 rounded"
+              className="lg:w-1/3 rounded"
               src={pack.packageImage}
               alt={pack.packageName}
             />
@@ -155,7 +155,7 @@ const PlaceOrder = () => {
                 {pack.packageName}
               </h1>
               <p>{pack.packageDesc}</p>
-              <div className="flex items-center gap-5">
+              <div className="flex flex-col lg:flex-row items-center gap-5">
                 <p className="text-xl font-semibold text-indigo-600">
                   Duration: {pack.packageDuration}
                 </p>
