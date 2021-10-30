@@ -53,11 +53,11 @@ const ManagePackage = () => {
 
   return (
     <div className="p-10">
-      <h1 className="text-3xl font-semibold text-gray-800">
+      <h1 className="text-3xl font-semibold text-gray-800 text-center lg:text-left">
         Manage All Packages
       </h1>
       <div className="mt-4">
-        <div className="grid grid-cols-5 gap-3 pb-2 mb-4 border-b-2 p-4 place-items-center">
+        <div className="hidden lg:grid grid-cols-5 gap-3 pb-2 mb-4 border-b-2 p-4 place-items-center">
           <h2 className="text-xl font-semibold text-gray-800">User Name</h2>
           <h2 className="text-xl font-semibold text-gray-800">User Email</h2>
           <h2 className="text-xl font-semibold text-gray-800">
@@ -70,14 +70,14 @@ const ManagePackage = () => {
         </div>
         {userPacks.map((userPack) => (
           <div
-            className="grid grid-cols-5 gap-3 my-4 p-4 place-items-center"
+            className="grid grid-cols-1 border shadow-xl lg:border-0 lg:shadow-none lg:grid-cols-5 gap-3 my-4 p-4 place-items-center"
             key={userPack._id}
           >
             <p className="font-medium">{userPack.name}</p>
             <p className="font-medium">{userPack.email}</p>
             <p className="font-medium">{userPack.packageName}</p>
             <p className="font-medium">{userPack.packageStatus}</p>
-            <div className="flex gap-4">
+            <div className="flex flex-col lg:flex-row gap-4">
               <button
                 onClick={() => handleStatusChange(userPack._id)}
                 className="py-2 px-4 rounded-full border-2 flex items-center gap-3 text-2xl text-green-500 hover:text-green-700 transition-all"
