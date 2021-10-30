@@ -1,15 +1,33 @@
-import axios from "axios";
+// Importing React and necessary hooks
 import React, { useEffect, useState } from "react";
+
+// Importing axios 🔥
+import axios from "axios";
+
+// Importing react hook form
 import { useForm } from "react-hook-form";
+
+// Importing hooks from react rounter
 import { useHistory, useParams } from "react-router";
+
+// Importing the hook for auth
 import useAuth from "../../hooks/useAuth";
 
+// Main Place Order component
 const PlaceOrder = () => {
+  // Getting the user from the hook
   const { user } = useAuth();
+
+  // Get the id from url parameter
   const { id } = useParams();
+
+  // Get and set the package in state
   const [pack, setPack] = useState({});
+
+  // Using history for rerouting
   const history = useHistory();
 
+  // Getting form methods
   const {
     register,
     handleSubmit,
@@ -17,6 +35,7 @@ const PlaceOrder = () => {
     formState: { errors },
   } = useForm();
 
+  // Load the package by its id
   useEffect(() => {
     axios
       .get(`https://young-wildwood-02340.herokuapp.com/packages/${id}`)
@@ -25,6 +44,8 @@ const PlaceOrder = () => {
         setPack(res.data);
       });
   }, [id]);
+
+  // Creating a new data collection consists of user's packages
   const onSubmit = (data) => {
     axios
       .post("https://young-wildwood-02340.herokuapp.com/users", {
@@ -48,7 +69,9 @@ const PlaceOrder = () => {
   return (
     <div className="p-10 flex flex-col-reverse lg:flex-row justify-around gap-10">
       <div className="lg:w-1/2">
+        {/* Form title */}
         <h1 className="text-3xl text-gray-800 font-semibold">Review Package</h1>
+        {/* User Details Form */}
         <form
           className="mt-8 flex flex-col gap-5 lg:w-2/3"
           onSubmit={handleSubmit(onSubmit)}
@@ -140,6 +163,7 @@ const PlaceOrder = () => {
         </form>
       </div>
       <div className="lg:w-1/2">
+        {/* Package Details */}
         <h1 className="text-3xl text-gray-800 font-semibold">
           Package Details
         </h1>
