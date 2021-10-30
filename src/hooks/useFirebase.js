@@ -1,3 +1,4 @@
+// Importing methods from firebase
 import {
   getAuth,
   signInWithPopup,
@@ -5,30 +6,35 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
+
+// Importing modules from react
 import { useEffect, useState } from "react";
+
+// Importing authentication function
 import initializeAuthentication from "../Firebase/firebase.init";
 
+// Initialize the auth system
 initializeAuthentication();
 
+// The useFirebase hook
 const useFirebase = () => {
+  // Getting and setting user data on the state
   const [user, setUser] = useState({});
+
+  // Setting up the loading state
   const [isLoading, setIsLoading] = useState(true);
 
+  // Setting up authentication provider
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
+  // Function for signin with google
   const signInUsingGoogle = () => {
     setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
-    // .then((result) => {
-    //   console.log(result.user);
-    //   setUser(result.user);
-    // })
-    // .catch((err) => {
-    //   console.log(err.message);
-    // });
   };
 
+  // Calling useEffect for hold the state change
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -41,6 +47,7 @@ const useFirebase = () => {
     return unsubscribed;
   }, [auth]);
 
+  // Function for logout
   const logOut = () => {
     signOut(auth)
       .then(() => {})
