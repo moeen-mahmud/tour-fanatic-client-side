@@ -15,7 +15,7 @@ const PackageContainer = () => {
         setPackages(res.data);
       });
   }, []);
-  //TODO: will add a loading spinner
+
   const handleBooking = (id) => {
     axios
       .get(`https://young-wildwood-02340.herokuapp.com/packages/${id}`)
@@ -27,7 +27,7 @@ const PackageContainer = () => {
 
   return (
     <div className="p-10 my-8">
-      <h1 className="text-center font-semibold text-5xl text-gray-800">
+      <h1 className="text-center font-semibold text-3xl lg:text-5xl text-gray-800">
         We've got some great deals
       </h1>
       <p className="text-lg text-indigo-600 font-medium text-center my-6">
