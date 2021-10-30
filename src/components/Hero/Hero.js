@@ -1,9 +1,13 @@
+// Imporing React
 import React from "react";
+
+// Importing hero image
 import HeroImage from "../../assets/hero-bg.png";
 
 const Hero = () => {
   return (
     <div
+      // Background hero banner image
       style={{
         backgroundImage: `url("${HeroImage}")`,
         height: "70vh",
@@ -13,6 +17,7 @@ const Hero = () => {
       }}
       className="flex justify-center"
     >
+      {/* Hero content */}
       <div className="pt-20 text-center">
         <h3 className="text-gray-300 italic text-lg mb-3">
           Walk your own path and be yourself
