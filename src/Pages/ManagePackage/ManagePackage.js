@@ -94,6 +94,7 @@ const ManagePackage = () => {
             <p className="font-medium">{userPack.packageName}</p>
             <p className="font-medium">{userPack.packageStatus}</p>
             <div className="flex flex-col lg:flex-row gap-4">
+              {/* Checking whether the package status is approved or pending */}
               {userPack.packageStatus === "Pending" ? (
                 <button
                   onClick={() => handleStatusChange(userPack._id)}
