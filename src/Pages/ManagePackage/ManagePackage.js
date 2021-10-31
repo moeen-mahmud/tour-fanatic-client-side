@@ -7,6 +7,7 @@ import axios from "axios";
 // Importing icons
 import { IoMdTrash } from "react-icons/io";
 import { IoIosCheckbox } from "react-icons/io";
+import { IoSyncCircle } from "react-icons/io5";
 
 // Main Manage Package component
 const ManagePackage = () => {
@@ -93,12 +94,21 @@ const ManagePackage = () => {
             <p className="font-medium">{userPack.packageName}</p>
             <p className="font-medium">{userPack.packageStatus}</p>
             <div className="flex flex-col lg:flex-row gap-4">
-              <button
-                onClick={() => handleStatusChange(userPack._id)}
-                className="py-2 px-4 rounded-full border-2 flex items-center gap-3 text-2xl text-green-500 hover:text-green-700 transition-all"
-              >
-                <span className="text-lg">Update</span> <IoIosCheckbox />
-              </button>
+              {userPack.packageStatus === "Pending" ? (
+                <button
+                  onClick={() => handleStatusChange(userPack._id)}
+                  className="py-2 px-4 rounded-full border-2 flex items-center gap-3 text-2xl text-yellow-600 hover:text-yellow-700 transition-all"
+                >
+                  <span className="text-lg">Update</span> <IoSyncCircle />
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleStatusChange(userPack._id)}
+                  className="py-2 px-4 rounded-full border-2 flex items-center gap-3 text-2xl text-green-500 hover:text-green-700 transition-all"
+                >
+                  <span className="text-lg">Updated</span> <IoIosCheckbox />
+                </button>
+              )}
               <button
                 onClick={() => handleDelete(userPack._id)}
                 className="py-2 px-4 rounded-full border-2 flex items-center gap-3 text-2xl text-red-500 hover:text-red-700 transition-all"
